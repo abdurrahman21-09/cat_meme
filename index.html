@@ -4,41 +4,45 @@
   <meta charset="UTF-8">
   <title>Funny Meme 😂</title>
   <style>
-    body {
-      margin: 0;
-      background: black;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      overflow: hidden;
-      cursor: pointer;
-    }
-    #normal img, #scary img {
-     max-width: 100%;   /* won’t be wider than the screen */
-    max-height: 100%;  /* won’t be taller than the screen */
-    width: auto;
-    height: auto;
-    display: block;
-    margin: 0 auto;    /* centers it horizontally */
+   body {
+  margin: 0;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  cursor: pointer;
 }
-    }
-    #scary {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: 9999;
-    }
-    #hint {
-      position: absolute;
-      bottom: 20px;
-      color: white;
-      font-family: sans-serif;
-      font-size: 18px;
-      opacity: 0.7;
-    }
+
+#normal, #scary {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#normal img, #scary img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+}
+
+#scary {
+  display: none;
+}
+
+#hint {
+  position: absolute;
+  bottom: 20px;
+  color: white;
+  font-family: sans-serif;
+  font-size: 18px;
+  opacity: 0.7;
+}
+
   </style>
 </head>
 <body>
@@ -74,6 +78,7 @@
   </script>
 </body>
 </html>
+
 
 
 
