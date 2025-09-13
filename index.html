@@ -15,10 +15,13 @@
       cursor: pointer;
     }
     #normal img, #scary img {
-      width: 100vw;
-      height: 100vh;
-      object-fit: contain;
-      display: block;
+     max-width: 100%;   /* won’t be wider than the screen */
+    max-height: 100%;  /* won’t be taller than the screen */
+    width: auto;
+    height: auto;
+    display: block;
+    margin: 0 auto;    /* centers it horizontally */
+}
     }
     #scary {
       display: none;
@@ -71,6 +74,7 @@
   </script>
 </body>
 </html>
+
 
 
 
