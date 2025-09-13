@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Funny Meme 😂</title>
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    #normal img, #scary img {
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      display: block;
+    }
+    #scary {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 9999;
+    }
+    #hint {
+      position: absolute;
+      bottom: 20px;
+      color: white;
+      font-family: sans-serif;
+      font-size: 18px;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+  <!-- Innocent meme first -->
+  <div id="normal">
+    <img src="hq720.jpg" alt="Wholesome cat">
+    <div id="hint">(Click to start meme 😺)</div>
+  </div>
+
+  <!-- Scary image (replace with your own) -->
+  <div id="scary">
+    <img src="jumpscare/jumpscare.jpg" alt="BOO!">
+  </div>
+
+  <!-- Scream audio -->
+  <audio id="scream" src="jumpscare/sound.MP3" preload="auto"></audio>
+
+  <script>
+    const normal = document.getElementById("normal");
+    const scary = document.getElementById("scary");
+    const scream = document.getElementById("scream");
+
+    // Wait for user click
+    document.body.addEventListener("click", () => {
+      setTimeout(() => {
+        normal.style.display = "none";
+        scary.style.display = "block";
+        scream.play().catch(err => {
+          console.error("Audio failed:", err);
+        });
+      }, 2000); // delay before scare
+    }, { once: true });
+  </script>
+</body>
+</html>
