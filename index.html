@@ -4,57 +4,44 @@
   <meta charset="UTF-8">
   <title>Funny Meme 😂</title>
   <style>
- body {
-  margin: 0;
-  background: black;
-  height: 100vh;
-  overflow: hidden;
-  cursor: pointer;
-  position: relative;
-}
+    body {
+      margin: 0;
+      background: black;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
 
-#normal, #scary {
-  position: absolute;   /* stack on top of each other */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;        /* center the image inside container */
-  justify-content: center;
-  align-items: center;
-}
+    #normal, #scary {
+      position: absolute;   /* stack on top of each other */
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;        /* center the image inside container */
+      justify-content: center;
+      align-items: center;
+    }
 
-#normal img, #scary img {
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
-  height: auto;
-}
+    #normal img, #scary img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+    }
 
-#scary {
-  display: none;        /* hide jumpscare initially */
-}
-
-#hint {
-  position: absolute;
-  bottom: 20px;
-  color: white;
-  font-family: sans-serif;
-  font-size: 18px;
-  opacity: 0.7;
-}
-
-
+    #scary {
+      display: none;        /* hide jumpscare initially */
+    }
   </style>
 </head>
 <body>
   <!-- Innocent meme first -->
   <div id="normal">
     <img src="cat.jpg" alt="Wholesome cat">
-    <div id="hint">(Click Here For Next Meme!😺)</div>
   </div>
 
-  <!-- Scary image (replace with your own) -->
+  <!-- Scary image -->
   <div id="scary">
     <img src="jumpscare.jpg" alt="BOO!">
   </div>
@@ -67,22 +54,14 @@
     const scary = document.getElementById("scary");
     const scream = document.getElementById("scream");
 
-    // Wait for user click
-    document.body.addEventListener("click", () => {
-      setTimeout(() => {
-        normal.style.display = "none";
-        scary.style.display = "block";
-        scream.play().catch(err => {
-          console.error("Audio failed:", err);
-        });
-      }, 2000); // delay before scare
-    }, { once: true });
+    // Auto scare after 3 seconds
+    setTimeout(() => {
+      normal.style.display = "none";
+      scary.style.display = "block";
+      scream.play().catch(err => {
+        console.error("Audio failed:", err);
+      });
+    }, 3000); // 3s delay
   </script>
 </body>
 </html>
-
-
-
-
-
-
