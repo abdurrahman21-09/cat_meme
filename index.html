@@ -21,6 +21,7 @@
       display: flex;        /* center the image inside container */
       justify-content: center;
       align-items: center;
+      flex-direction: column;
     }
 
     #normal img, #scary img {
@@ -33,12 +34,21 @@
     #scary {
       display: none;        /* hide jumpscare initially */
     }
+
+    #hint {
+      margin-top: 15px;
+      color: white;
+      font-family: sans-serif;
+      font-size: 18px;
+      opacity: 0.8;
+    }
   </style>
 </head>
 <body>
   <!-- Innocent meme first -->
   <div id="normal">
     <img src="cat.jpg" alt="Wholesome cat">
+    <div id="hint">(Click here for next meme 😺)</div>
   </div>
 
   <!-- Scary image -->
